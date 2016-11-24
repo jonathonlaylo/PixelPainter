@@ -8,15 +8,12 @@ body {
 h1 {
   font-family: helvetica neue;
   padding: 5px;
-  font-family: Rockwell Extra Bold;
-  padding: 5;
   font-size: 50px;
   text-align: center;
 }
 
 .ppCanvas {
   width: 500px;
-  height: 500px;
   margin: 5px;
   position: relative;
   float: right;
@@ -31,10 +28,10 @@ h1 {
 }
 
 .colorCanvas {
-  width: 90px;
-  height: 210px;
-  border: 1px solid black;
-  display: inline-block;
+  width: 150px;
+  height: 350px;
+/*  border: 1px solid black;
+*/  display: inline-block;
   margin: 5px;
   position: relative;
   float: left;
@@ -42,7 +39,7 @@ h1 {
 
 .swatchCanvasPixel {
   background-color: white;
-  width: 43px;
+  width: 40px;
   height: 40px;
   border: 1px solid black;
   display: inline-block;
@@ -53,6 +50,12 @@ h1 {
   display: inline-block;
 }
 
+<<<<<<< HEAD
+#swatchCanvasPixel{
+  height: 100px;
+  width: 100px;
+}
+=======
 #swatchCanvasPixel {
   height: 50px;
   width: 50px;
