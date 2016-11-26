@@ -1,8 +1,7 @@
 body {
-  background-color: #DCDCDD;
   border-radius: 5px;
   color: black;
-  background-image: url('http://www.clipartbest.com/cliparts/4ib/4Bd/4ib4Bdbig.png')
+  background-image: url('http://media.istockphoto.com/vectors/colourful-spray-graffiti-background-vector-id455327001?k=6&m=455327001&s=170667a&w=0&h=Fp5GrQ6QfZFQCKlePPJaI2z6Cakhtcydj9MBFQbRb34=')
 }
 
 h1 {
@@ -14,9 +13,9 @@ h1 {
 
 .ppCanvas {
   width: 500px;
-  margin: 5px;
-  position: relative;
-  float: right;
+  display: inline-block;
+  float: left;
+  margin-left: 50px;
 }
 
 .canvasPixelCell {
@@ -28,13 +27,12 @@ h1 {
 }
 
 .colorCanvas {
-  width: 150px;
-  height: 350px;
-/*  border: 1px solid black;
-*/  display: inline-block;
-  margin: 5px;
-  position: relative;
+  width: 200px;
+  height: 300px;
+  display: inline-block;
   float: left;
+  margin-left: 5px;
+  position: absolute;
 }
 
 .swatchCanvasPixel {
@@ -50,12 +48,11 @@ h1 {
   display: inline-block;
 }
 
-<<<<<<< HEAD
 #swatchCanvasPixel{
   height: 100px;
   width: 100px;
 }
-=======
+
 #swatchCanvasPixel {
   height: 50px;
   width: 50px;
@@ -84,9 +81,8 @@ h1 {
   font-size: 15px;
   font-weight: bold;
   padding: 6px 24px;
-  text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
-  position: relative;
   float: left;
-  clear: right;
+  position: relative;
+  margin-top: 470px;
 }
