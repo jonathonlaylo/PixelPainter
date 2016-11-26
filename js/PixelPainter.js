@@ -38,22 +38,22 @@ function swCanvas(pixelSize) {
   }
 }
 
-  //Pixel Painter Canvas
-  function ppCanvas(pixelSize) {
-    for (var x = 0; x < pixelSize; x++) {
-      var canvasPixel = document.createElement('div');
-      canvasPixel.className = 'canvasPixelCell';
-      pixelPainterCanvas.appendChild(canvasPixel);
-      // --------- EVENTLISTENERS -----------
-      canvasPixel.addEventListener('click', insertColorPicker);
-      canvasPixel.addEventListener('mousedown', function(event) {mouseDown(event);
-      });
-      canvasPixel.addEventListener('mouseover', function(event) {mouseOver(event);
-      });
-      canvasPixel.addEventListener('mouseup', function(event) {mouseUp(event);
-      });
-    }
+//Pixel Painter Canvas
+function ppCanvas(pixelSize) {
+  for (var x = 0; x < pixelSize; x++) {
+    var canvasPixel = document.createElement('div');
+    canvasPixel.className = 'canvasPixelCell';
+    pixelPainterCanvas.appendChild(canvasPixel);
+    // --------- EVENTLISTENERS -----------
+    canvasPixel.addEventListener('click', insertColorPicker);
+    canvasPixel.addEventListener('mousedown', function(event) {mouseDown(event);
+    });
+    canvasPixel.addEventListener('mouseover', function(event) {mouseOver(event);
+    });
+    canvasPixel.addEventListener('mouseup', function(event) {mouseUp(event);
+    });
   }
+}
 
 // colorPick is supposed to click the color from the swatches and store that vaule
 function storeColorPicker(event) {
