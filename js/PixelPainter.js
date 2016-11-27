@@ -3,6 +3,8 @@ var pixelPainterCanvas = document.createElement('div');
 var colorSwatchesCanvas = document.createElement('div');
 var eraseButton = document.createElement('button');
 var clearButton = document.createElement('button');
+var saveButton = document.createElement('button');
+var loadButton = document.createElement('button');
 
 var whenClicked = null;
 var color = ['262c04', 'ffc0cb', 'f2df4f', 'eeeeee', 'c6e2ff', '4169e1', '3b411d', 'f10714', '0d8163', '255083', '5f4236', '3496fa', 'fa02d4', '3ff206', '560e3f', '00fa9a', 'violet', '8b0000',
@@ -23,6 +25,16 @@ clearButton.className = 'buttons';
 clearButton.innerHTML = "Clear";
 pixelPainter.appendChild(clearButton);
 clearButton.addEventListener('click', clear);
+
+saveButton.className = 'buttons';
+saveButton.innerHTML = "SAVE";
+pixelPainter.appendChild(saveButton);
+saveButton.addEventListener('click', save);
+
+loadButton.className = 'buttons';
+loadButton.innerHTML = "LOAD";
+pixelPainter.appendChild(loadButton);
+loadButton.addEventListener('click', load);
 
 pixelPainterCanvas.className = 'ppCanvas';
 pixelPainter.appendChild(pixelPainterCanvas);
@@ -53,11 +65,6 @@ function ppCanvas(pixelSize) {
     canvasPixel.addEventListener('mouseup', function(event) {mouseUp(event);
     });
   }
-}
-
-// colorPick is supposed to click the color from the swatches and store that vaule
-function storeColorPicker(event) {
-  currentColor = event.target.style.backgroundColor;
 }
 
 ppCanvas(2500);
@@ -96,12 +103,6 @@ function mouseUp(event) {
   }
 }
 
-function colorContinous(){
-  if('mouseDown'){
-    event.target.style.backgroundColor = currentColor;
-  }
-}
-
 function erase(event) {
   currentColor = 'white';
 }
@@ -109,5 +110,26 @@ function erase(event) {
 function clear(event) {
   for(var i = 0; i < document.querySelectorAll('.canvasPixelCell').length; i++) {
     document.querySelectorAll('.canvasPixelCell')[i].style.backgroundColor = 'white';
+  }
+}
+
+function save(event){
+  var dataArray = [];
+  var saveCell = document.querySelectorAll('.canvasPixelCell');
+  for (var i = 0; i < saveCell.length; i++) {
+    dataArray.push(saveCell[i].style.backgroundColor);
+  }
+  //local storage thing goes here i guess
+  localStorage.setItem('saveCellDrawing', JSON.stringify(dataArray));
+  //console.log('just DataArray', dataArray);
+  console.log('data Stringified', JSON.stringify(dataArray));
+}
+
+function load(event){
+  var data = JSON.parse(localStorage.getItem('saveCellDrawing'));
+  console.log('LOADED DATA', data);
+  var dataDrawing = document.querySelectorAll('.canvasPixelCell');
+  for (var i = 0; i < dataDrawing.length; i++) {
+    dataDrawing[i].style.backgroundColor = data[i];
   }
 }
